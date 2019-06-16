@@ -9,12 +9,12 @@ are called **CP**. Besides there are **B**atch **P**rozesses (**BP**/Scripts), w
 ## Finger control - that's how it should be:
 Tap with your finger on the screen/pad and in a window (pointer on touchpad) or hold after tap and move horizontally/vertically and release. The movement can be left, right, up or down (-x, + x, -y, + y). If the value of the movement exceeds a character width or height, one of four gestures will be started and terminated with Release/Lift.
 The window can be an **AlfaW** (text including icons) or a graphic (up to 4 windows). It can be smaller or larger (horizontal/x) than the screen or the same size (fullscreen). The lower part of the **AlfaW** can contain a scroll table whose last column **LastC** can contain more characters than displayed in the window.
-The four gestures are interpreted differently, depending on the window and position inside. Generally: -x gestures move windows and +x gestures pop-up menus.
+The four gestures are interpreted differently, depending on the window and position inside. Generally: -x gestures move windows and +x gestures open pop-up menus.
 # sources
 _touch.c_ should check basics of mutitouch functions standalone (just not valid)
 _check.c_ demonstrator of _finger-only_ control (in preparation)
 ## check.c
-is used to test the extensions described in _xinitn.c_. If the **s** - script is used, make/run is done with `t <d> c <files>`. The `<files>` (icons/graphics as *.xpm and *.c sources) are predefined and without `<d>` _**Xvnc**_ is used as the server. I recommend `:0` as `<d>` to use _**Xorg**_ as the server. All other possible Xserver from **s** are not treated here.
+is used to test the **CP** extensions described in _xinitn.c_. If the **s** - script is used, make/run is done with `t <d> c <files>`. The `<files>` (icons/graphics as *.xpm and *.c sources) are predefined and without `<d>` _**Xvnc**_ is used as server. I recommend `:0` for `<d>` to use _**Xorg**_ as the server. All other possible Xserver from **s** are not treated here.
 
 **check** generates an **AlfaW** (basic) with 7 icons, 3 fields, one slider and a table with two columns. Except for _basic_ (82 characters in width), the number of characters of **AlfaW** is calculated from the width of screen and font and orientation **p/l**. The _smiley icon_ cyclically switches between three modes from _basic_ to _fullscreen_ to _partscreen_ (400/800 or 800/400) and back.
 
