@@ -1,2 +1,10 @@
 # videos and pictures to processes
-## TV (Team Viewer) 
+Here are examples of controlling Termux / X11 apps as `* .mp4` and` '* .jpg` related to programs of this repo.
+An app in Termux can be portrait or landscape depending on the rotation of the phone in your hand, which in the current case is 1440x720 or vice versa.
+Partially the examples are also on my pad and PC (unrotatable but different resolutions)
+## xserver XSDL
+If there is a better Xserver, XSDL should _**not**_ be used because it is based out of service and an old xorg. the rotation is _not really_ supported and pinch/multitouch is impossible. in `xserver.mp4` are examples of xterm, display, nedit shown.
+## Termux_mc (midnight commander)
+The **mc** functions with the Termux pinch are exemplary for X11 clients with _text/cursor functions_ and finger control on phones.
+## TV (Team Viewer) and Xvnc
+the recommended Xvnc server for Termux is similar to the TV, behaving like a finger/screen. in `TV_pad.mp4` wird dies gezeigt. 
