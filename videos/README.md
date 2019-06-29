@@ -7,4 +7,4 @@ If there is a better Xserver, XSDL should _**not**_ be used because it is based 
 ## Termux_mc (midnight commander)
 The **mc** functions with the Termux pinch are exemplary for X11 clients with _text/cursor functions_ and finger control on phones.
 ## TV (Team Viewer) and Xvnc
-the recommended Xvnc server for Termux is similar to the TV, behaving like a finger/screen. in `TV_pad.mp4` wird dies gezeigt. 
+the recommended Xvnc server for Termux is similar to the TV, behaving like a finger/screen. in `TVpad_phone.mp4` wird dies gezeigt. 
