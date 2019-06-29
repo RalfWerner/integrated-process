@@ -1,7 +1,7 @@
 # Integrated-Process
 Abbreviated **IP**, is an assessment tool that exists since the late 80's. Here, however, only a part is treated, which I designate as **CP** and only the extensions, to use **CP** without **W**indows **M**anager (**WM**) in _Termux_ on smartphones.
 
-Currently here are sources that I use for X11/Xorg-check. Besides the _**Termux**_ environment, sources are also useable in MobaXterm and Debian 9.2. The script **s** could use to update a virgin Termux [APK](https://github.com/termux/termux-packages/issues/3535#issuecomment-489430202) with needed packages for check.
+Currently here are sources that I use for X11/X-Client/Server-check. Besides the _**Termux**_ environment, sources are also useable in MobaXterm and Debian 9.2. The script **s** could use to update a virgin Termux [APK](https://github.com/termux/termux-packages/issues/3535#issuecomment-489430202) with needed packages for check.
 
 ## Control Processes in the IP:
 are called **CP**. Besides there are **B**atch **P**rozesses (**BP**/Scripts), which are only edited and started as usual. Both types of processes do essentially the same thing. The **CP** functions _with_ **WM** remain unchanged and will not be treated here. In addition to the **WM** waiver, the portrait/landscape (**p/l**) change of the handy (turn) is part of the extensions that should also work with **WM**.
