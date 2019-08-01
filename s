@@ -20,6 +20,7 @@ fi ; if [ ! -f u/bin/$X ];then X=Xorg; fi
 if [ $0 = bash ];then test $PWD != $HOME && $e "new $0 in $PWD `ll;env;pp`"; return
 elif [ $0 = "$SHELL" ];then export PATH=./:~/:$PATH DISPLAY=:1 XDG_RUNTIME_DIR=u/tmp \
 DPY=`ip route|tr -s ' '|cut -d' ' -f9` LD_LIBRARY_PATH=$PREFIX/lib; g=".vnc/l* u/tmp/.X*"
+test `ps|grep -c .wtermux` = 1 && am start -n com.termux.wtermux/.MainActivity
 test `ps|grep -c " sshd"` = 1 && sshd; test ! -d ~/TMP && mkdir ~/TMP
 f="\\[\\e[01;34m\\][\\[\\e[0m\\]\\[\\e[00;32m\\]\\w\\[\\e[0m\\]\\[\\e[01;34m\\]]\\[\\e"
 PS1="$f[0;34m\\]\\[\\e[0m\\]\\[\\e[1;37m\\]\\$\\[\\e[0m\\]\\[\\e[00;37m\\] \\[\\e[0m\\]"
