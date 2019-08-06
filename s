@@ -1,8 +1,8 @@
 #!/bin/bash
 D=192.168.0.1; L=12_73_15_14_58; X=Xwayland; WM=fluxbox; # <=== seting of LAN (arm,arch,PC,pad)
-b='kill `ps -e|grep fluxbox|cut -d" " -f1` `ps -e|grep openbox|cut -d" " -f1`'; e=echo
-alias ll="ls -la" dd="du -hd 1" pp='ps -eo pid,ppid,comm,etime' fb="$b;fluxbox&" ob="$b;openbox&" o="$b"
-# =======> update of all neccessary packages (not: termux-keyring, xorg-server)
+a='$WM&';b='kill `pgrep $WM`'; alias ll="ls -la" dd="du -hd 1" pp='ps -eo pid,ppid,comm,etime' \
+fb="$b;WM=fluxbox;$a" ob="$b;WM=openbox;$a" o="$b"; e=echo
+# =======> update of all neccessary packages (virgin termux pkg update)
 if [ ! -d ~/.ssh ];then ln -s /storage/emulated/0 d; ln -s /storage/6533-6333 sd
  test ! -d sd && ln -s d sd; ln -s ../usr u; ln -s sd/ip/s .bashrc; ul=u/etc/apt/sources.list
  a=`uname -m`; $e deb https://dl.bintray.com/termux/termux-packages-24/ stable main>$ul
@@ -14,25 +14,22 @@ if [ ! -d ~/.ssh ];then ln -s /storage/emulated/0 d; ln -s /storage/6533-6333 sd
  s=Home/sd;printf " %s\n" "SDB  120   *   $s/ip/" "FONT 2:202834.1" "TSDB $s/ip/EXE"\
  "EDITOR         IP      display" "TSDB $s">.issy; $e "geometry=1440x1440">>.vnc/config
  if [ `type ps|grep -c hashed` = 0 ];then cd u/bin; mv ps ps0; ln -s busybox ps; cd; fi
-#if [ ! -f u/bin/Xorg -a -d sd/ip/x ];then cd ~/sd/ip/x; cp -p *.h ~/u/include/X11/extensions
-# cd $a; d="libxdamage libdrm libpixman libpciaccess libxfont2 libxkbfile libxshmfenc libfontence"
-# pkg in $d libxfixes libexpat mesa xkeyboard-config xorg-xkbcomp; dpkg -i *.deb; cd; fi
 fi ; if [ ! -f u/bin/$X ];then X=Xorg; fi 
 #
 # =======> use as bashrc ($0=$SHELL) pkg list-in |grep -c arch
 if [ $0 = bash ];then test $PWD != $HOME && $e "new $0 in $PWD `ll;env;pp`"; return
 elif [ $0 = "$SHELL" ];then export PATH=./:~/:$PATH DISPLAY=:1 XDG_RUNTIME_DIR=u/tmp \
 DPY=`ip route|tr -s ' '|cut -d' ' -f9` LD_LIBRARY_PATH=$PREFIX/lib; g=".vnc/l* u/tmp/.X*"
-h=12; test `ps -e|grep -c .wtermux` = 1 && am start -n com.termux.wtermux/.MainActivity
-test `ps -e|grep -c " sshd"` = 1 && sshd; test ! -d ~/TMP && mkdir ~/TMP
+h=12; test `pgrep -c .wtermux` = 0 && am start -n com.termux.wtermux/.MainActivity
+test `pgrep -c sshd` = 0 && sshd; test ! -d ~/TMP && mkdir ~/TMP
 f="\\[\\e[01;34m\\][\\[\\e[0m\\]\\[\\e[00;32m\\]\\w\\[\\e[0m\\]\\[\\e[01;34m\\]]\\[\\e"
 PS1="$f[0;34m\\]\\[\\e[0m\\]\\[\\e[1;37m\\]\\$\\[\\e[0m\\]\\[\\e[00;37m\\] \\[\\e[0m\\]"
-if [ -f u/bin/Xvnc -a `ps -e|grep -c "Xvnc "` = 1 ];then rm -rf $g; vncserver -localhost; fi
-if [ ! -f u/bin/$X ];then $e "$X missing"; elif [ `ps -e|grep -c .wtermux` = 1 ];then
- $e "Wtermux (PID2) missing"; elif [ `ps -e|grep -c $X` = 1 ];then d="-display :0"; $X&
- f="-fn -*-*-bold-r-*--24-*-*-*-*-*-*-*"; test -f u/bin/$WM -a `ps -e|grep -c $WM` = 1 && $WM $d&
- sleep 1;test `ps -e|grep -c aterm` = 1 && aterm $d -geometry 40x20+0+0 $f -bg '#eeeece' -fg blue &
-fi ; alias hf="sftp -P 8022 $D$h" h="ssh -p 8022 $D$h" k="kill `ps -eo pid,comm|grep com|cut -dc -f1`" 
+if [ -f u/bin/Xvnc -a `pgrep -c Xvnc` = 0 ];then rm -rf $g; vncserver -localhost; fi
+if [ ! -f u/bin/$X ];then $e "$X missing"; elif [ `pgrep -c .wtermux` = 0 ];then
+ $e "Wtermux (PID2) missing"; elif [ `pgrep -c $X` = 0 ];then d="-display :0"; $X&
+ f="-fn -*-*-bold-r-*--24-*-*-*-*-*-*-*"; test -f u/bin/$WM -a `pgrep -c $WM` = 0 && $WM $d&
+ sleep 1;test `pgrep -c aterm` = 0 && aterm $d -geometry 40x20+0+0 $f -bg '#eeeece' -fg blue &
+fi ; alias hf="sftp -P 8022 $D$h" h="ssh -p 8022 $D$h" k="kill `pgrep com.termux`" 
 if [ ! -f t ];then echo 'bash ~/.bashrc $@'>t; chmod +x t;fi ; $e "moin sshd $DPY"; return
 #
 # =======> termux-setup-storage; tar -xzf /storage/6533-6333/t.tgz -C ..
@@ -40,7 +37,7 @@ elif [ "$1" = tgz ];then c=sd/t.tgz; cd; pwd; ls -lh $c
  if [ "$2" = new ];then tar czf - ..>$c; elif [ "$2" != list ];then echo " use $0 tgz [opt]
  opt: new, t=list, x=extract"; else echo "*/*/">../t; tar -tzf $c -C .. -T ../t; fi; exit
 fi
-# =======> check of all three xserver and API D=192.168.178.;
+# =======> check of all three xserver and API
 #!/data/data/com.termux/files/usr/bin/bash
 typeset -i i=0; api=$PREFIX/libexec/termux-api; p="$@"; act='--user 0 -a android.intent.action'
 if [ "$1" = "-h" -o $# = 0 ];then printf '%s\n' "usage t [n] [opt] [url] [file] (version 0.1)" ''"
@@ -76,9 +73,9 @@ if [ "$t" = "" ];then t=rotated; elif [ $m = counter ];then m=text
   then m=$n; if [ `echo $m|grep -c '\.'` = 1 ];then f2="$f $n";# 
   $api Share --es file $(echo `realpath $n`|sed 's/^\///'); sleep 0;m=$c;fi ;fi ;done ;fi
 done ; p="$f";fi ; i=6; x=$2
-if [ $1 = :1 -o $1 = :2 ];then export DISPLAY=$1;ps -ef|grep xnest
+if [ $1 = :1 -o $1 = :2 ];then export DISPLAY=$1; pgrep -l xnest
   printf "xnest :%s -geometry %s &\n" 1 720x1200 2 1200x720
- elif [ $1 = :0 ];then export DISPLAY=:0; test `ps -e|grep -c $X` = 1 && $X&
+ elif [ $1 = :0 ];then export DISPLAY=:0; test `pgrep -c $X` = 0 && $X&
  elif [ $1 = 00 ];then export DISPLAY=$DPY:0
  elif [ `echo $L|grep -c $1` = 0 ];then i=3; x=$1
  else export DISPLAY=$D$1:0; i=6; x=$2; test "$2" = "" && x=2; fi
@@ -88,8 +85,8 @@ I=~/sd/ip; fc=262834; if [ ! -d $I ];then I=`pwd`; fc=162034;fi
 if [ `echo _a_b_c_f_m_t_o_p_x|grep -c _$x` = 1 ];then g=1440x720; p="`echo $p|cut -c$i-`"
 if [ $x = x -o $x = o ];then g=40x20; WM=fluxbox; test $x = o && WM=openbox
   test "$p" = "" && p=24; f="-*-*-bold-r-*--$p-*-*-*-*-*-*-*"
-  p=;I=; c="-bg #eeeece -fg blue"; test `ps -e|grep -c box` = 1 && $WM&
-  s="xterm -fn $f -geometry $g+0-0 $c"; test `ps -e|grep -c pcmanfm` = 1 && pcmanfm&
+  p=;I=; c="-bg #eeeece -fg blue"; test `pgrep -c box` = 0 && $WM&
+  s="xterm -fn $f -geometry $g+0-0 $c"; test `pgrep -c pcmanfm` = 0 && pcmanfm&
  elif [ $x = m ];then s="mpv -geometry $g-0+0 -vo x11"
  elif [ $x = f ];then s=~/TMP/feh ;I=$I/feh; i=9 
  elif [ $x = t ];then s=~/TMP/touch.exe; test "$p" = "" && p=petm.xpm; i=9
