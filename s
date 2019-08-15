@@ -1,8 +1,8 @@
 #!/bin/bash
-L=12_73_15_14_58; X=Xwayland; WM=fluxbox; # <=== seting of LAN (arm,arch,PC,pad ...)
-DPY=$MY_IP_ADDRESS; test -z $DPY && DPY=`ip route|tr -s ' '|cut -d' ' -f9`;D=`echo $DPY`|cut -c-11 
+L=12_73_15_14_58; X=Xwayland; WM=fluxbox; I=aterm; # <=== seting of LAN (arm,arch,PC,pad ...)
+DPY=$MY_IP_ADDRESS; test -z $DPY && DPY=`ip route|tr -s ' '|cut -d' ' -f9`;D=`echo $DPY|cut -c-11`
 p='ps -eo pid,ppid,comm,etime';a='$WM&';b='kill `pgrep $WM`';alias ll="ls -la" dd="du -hd 1" \
-pp=$p fb="$b;WM=fluxbox;$a" ob="$b;WM=openbox;$a" o="$b";e=echo;y=com.termux.wtermux/.MainActivity
+pp=$p fb="$b;WM=fluxbox;$a" ob="$b;WM=openbox;$a" o="$b";e=echo;y=com.termux.x11/.MainActivity
 # =======> update of all neccessary packages (virgin termux pkg/tgz update)
 if [ ! -d ~/.ssh ];then d=`dirname $0`;a=$d/../$1.tgz; test -f $a && tar -xzf $a -C ~/..
  test -d ~/.ssh && exit;d=/storage/6533-6333; ln -s /storage/emulated/0 d; ln -s $d sd
@@ -16,27 +16,27 @@ if [ ! -d ~/.ssh ];then d=`dirname $0`;a=$d/../$1.tgz; test -f $a && tar -xzf $a
  s=Home/sd;printf " %s\n" "SDB  120   *   $s/ip/" "FONT 2:202834.1" "TSDB $s/ip/EXE"\
  "EDITOR         IP      display" "TSDB $s">.issy; $e "geometry=1440x1440">>.vnc/config
  if [ `type ps|grep -c hashed` = 0 ];then cd u/bin; mv ps ps0; ln -s busybox ps; cd; fi
-fi ; s=.shortcuts; z=com.termux/.MainActivity; p1=`pgrep -o com.termux`; p2=`pgrep -o .wtermux`
+fi ; s=.shortcuts; z=com.termux/.MainActivity; p1=`pgrep -o Xvnc`; p2=`pgrep -o $X`
 if [ ! -d $s -a $PWD = $HOME ];then mkdir $s; cd $s;yy="am start -n $y";$e htop>htop
  $e "ls -l;env;$p;pstree;exit 1">ls-env-ps;$e mc sd/ip>mc;$e ./t d>dialog-API;$e ./t o>pcmanfc-VNC
  $e "$yy;./t :0 b d">xlunch-Xorg;$e ./t b>xlunch-VNC;$e "$yy;./t :0 x">pcmanfc-Xorg; cd; fi
-test ! -z $p1 && export LD_PRELOAD=$PREFIX//lib/libtermux-exec.so:$PREFIX/lib/libandroid-shmem.so
+export LD_PRELOAD=$PREFIX//lib/libtermux-exec.so:$PREFIX/lib/libandroid-shmem.so
 #
 # =======> use as bashrc ($0=$SHELL) pkg list-in |grep -c arch
 if [ $0 = bash ];then test $PWD != $HOME && $e "new $0 in $PWD `ll;env;pp`"; return
 elif [ $0 = "$SHELL" ];then export PATH=./:~/:$PATH DPY DISPLAY=:1 XDG_RUNTIME_DIR=u/tmp \
-LD_LIBRARY_PATH=$PREFIX/lib; g=".vnc/l* u/tmp/.X*"; test -z $p2 && am start -n $y
-test -z `pgrep -o sshd` && sshd; test ! -d ~/TMP && mkdir ~/TMP; p2=`pgrep -o .wtermux`
+LD_LIBRARY_PATH=$PREFIX/lib; x=com.termux.wtermux/.MainActivity; test -z $p2 && am start -n $x
+c=`pgrep -o wtermux`; if [ -z $c ];then test -z $p2 && am start -n $y; else y=x; fi
+if [ -f u/bin/Xvnc -a -z "$p1" ];then rm -rf .vnc/l* u/tmp/.X*; vncserver -localhost; fi
+test -z `pgrep -o sshd` && sshd;test ! -d TMP && mkdir TMP;test ! -f t && $e 'bash ~/.bashrc $@'>t
 f="\\[\\e[01;34m\\][\\[\\e[0m\\]\\[\\e[00;32m\\]\\w\\[\\e[0m\\]\\[\\e[01;34m\\]]\\[\\e"
 PS1="$f[0;34m\\]\\[\\e[0m\\]\\[\\e[1;37m\\]\\$\\[\\e[0m\\]\\[\\e[00;37m\\] \\[\\e[0m\\]"
-if [ -f u/bin/Xvnc -a -z "`pgrep -o Xvnc`" ];then rm -rf $g; vncserver -localhost; fi
-test -z "$p2" -a -f u/bin/Xorg && X=Xorg; # <== If Xorg-server will reactivated
-if [ ! -f u/bin/$X ];then $e "$X missing"; elif [ -z "$p2" -a $X != Xorg ];then
- $e "Wtermux (PID2) missing"; elif [ -z "`pgrep -o $X`" ];then d="-display :0"; $X&
- f="-fn -*-*-bold-r-*--24-*-*-*-*-*-*-*"; test -f u/bin/$WM -a -z "`pgrep -o $WM`" && $WM $d&
- sleep 1;test -z `pgrep -o aterm` && aterm $d -geometry 40x20+0+0 $f -bg '#eeeece' -fg blue &
-fi ; h=12; alias hf="sftp -P 8022 $D$h" h="ssh -p 8022 $D$h" k="kill $p1" 
-if [ ! -f t ];then echo 'bash ~/.bashrc $@'>t; chmod +x t;fi ; $e "moin sshd $DPY"; return
+if [ ! -f u/bin/$X ];then $e "$X missing"; elif [ -z $p2 ];then d="-display :0"; $X :0>TMP/TX 2>&1 &
+ p2=`pgrep -o $X`; test -f u/bin/$WM -a -z "`pgrep -o $WM`" && $WM $d>>TMP/TXl 2>&1 &
+ sleep 1; test ! -z "$I" -a -z "`pgrep -o $I`" &&\
+ aterm $d -geometry 40x20+0+0 -fn -*-*-bold-r-*--24-*-*-*-*-*-*-* -bg '#eeeece' -fg blue &
+fi ; h=12; alias hf="sftp -P 8022 $D$h" h="ssh -p 8022 $D$h" k="kill $PPID" 
+chmod +x t; $e "moin sshd $DPY, $X:$p2, Xvnc:$p1"; return
 #
 # =======> termux-setup-storage
 elif [ "$1" = tgz ];then c=sd/t.tgz; cd; ls -lh sd/*tgz
@@ -88,25 +88,24 @@ if [ $1 = :1 -o $1 = :2 ];then export DISPLAY=$1; pgrep -l xnest
  else export DISPLAY=$D$1:0; i=6; x=$2; test "$2" = "" && x=2; fi
  
 # =======> X11 packages #c=o; printf '%s\n' "t :0 $c&" "t 00 $c&" "t $c&">a;chmod +x a; a&
-I=~/sd/ip; fc=262834; if [ ! -d $I ];then I=`pwd`; fc=162034;fi
-if [ `echo _a_b_c_f_m_t_o_p_x|grep -c _$x` = 1 ];then g=1440x720; p="`echo $p|cut -c$i-`"
+I=~/sd/ip; fc=262834; g=1440x720; if [ ! -d $I ];then I=`pwd`; fc=162034; fi
+if [ `echo _a_b_c_f_m_t_o_p_x|grep -c _$x` = 1 ];then p="`echo $p|cut -c$i-`"; i=9
 if [ $x = x -o $x = o ];then g=40x20; WM=fluxbox; test $x = o && WM=openbox
   test "$p" = "" && p=24; f="-*-*-bold-r-*--$p-*-*-*-*-*-*-*"; p=;I=; pcmanfm&
   s="xterm -fn $f -geometry $g+0-0 -bg #eeeece -fg blue"; test -z `pgrep -o $WM` && $WM&
- elif [ $x = m ];then s="mpv -geometry $g-0+0 -vo x11"
- elif [ $x = f ];then s=~/TMP/feh ;I=$I/feh; i=9 
- elif [ $x = t ];then s=~/TMP/touch.exe; test "$p" = "" && p=petm.xpm; i=9
+ elif [ $x = m ];then s="mpv -geometry $g-0+0 -vo x11"; i=0
+ elif [ $x = f ];then s=~/TMP/feh ;I=$I/feh 
+ elif [ $x = t ];then s=~/TMP/touch.exe; test "$p" = "" && p=petm.xpm
  elif [ $x = p -o $x = a ];then n=`identify $p|cut -d' ' -f3`; s=display
-  test $x = a && s=animate; s="$s -resize $g -geometry $g+0+0"
- elif [ $x = b ];then s=~/TMP/xlunch.exe; g=`cd $I/..;pwd`/xlunch/extra; i=9
+  test $x = a && s=animate; s="$s -resize $g -geometry $g+0+0"; i=0
+ elif [ $x = b ];then s=~/TMP/xlunch.exe; g=`cd $I/..;pwd`/xlunch/extra
   c="-f $g/OpenSans-Regular.ttf/30 -i $g/sample_entries.dsv --highlight $g/highlight.png"
   test "$p" = d && p="-d -g petm.xpm $c"; test "$p" = "" && p="-g $g/wp.jpg $c -b 140\
   --outputonly --iconpadding 20 --textpadding 10 --paddingswap --leastmargin 10"
- elif [ $x = c ];then s=~/TMP/check.exe;cd $I;
-  test "$p" = "" && p="P*pm s *.c p*m :$fc.430"; i=9; fi
-while [ 1 ];do cd $I; test $i = 9 && make $s; $e "$DISPLAY ($x) $s $p"
-  test $x = f && cd ..; $s $p; i=$?; test $i != 9 && break;done ;exit
-
+ elif [ $x = c ];then s=~/TMP/check.exe; test -z "$p" && p="P*pm s *.c p*m :$fc.1"
+fi ; while [ 1 ];do cd $I; test $i = 9 && make $s; $e "$DISPLAY ($x) $s $p"
+ test $x = f && cd ..; $s $p; i=$?; test $i != 9 && break;done ; exit
+#/data/data/com.termux/files/home/.vnc/xstartup
 elif [ $x = i ];then cd; rm -f HLPDIR EXEDIR; export LANG=C; cd $I
 E=$I/EXE; if [ ! -d $E ];then cd ..; E=$I; I=`pwd`;fi ; export ISSYLIB=$I
 cd; ln -s $E EXEDIR; export SAVENAM=$HOME/TMP/T`date +%X | cut -c-2,4-5,7-8`
@@ -120,7 +119,7 @@ done ; rm -f $HOME/TMP/T*; else i=0; fi;test $i != 0 && exit
 
 v=VIEW; b=broadcast; c="-n com.termux/com.termux.app.TermuxOpenReceiver"
 for n in $p; do i=i+1; f=$n; test -f $n && f=$(echo `realpath $n`|sed 's/^\///')
- if [ $n = l ];then s=TMP/T.log; logcat -d>$s; grep 'E ' $s; ls -l $s
+ if [ $n = l ];then s=TMP/Tlog; logcat -d>$s; grep 'E ' $s; ls -l $s
  elif [ $n = 2 ];then am start -n $y; elif [ $n = 1 ];then am start -n $z
  elif [ $n = e ];then v=EDIT; elif [ $n = u ];then b=start; c=""
  elif [ $n = s ];then v=s; elif [ ! -f $n -a "$c" != "" ];then a="$api Torch --ez enabled"
