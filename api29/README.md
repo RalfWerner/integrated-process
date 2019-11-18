@@ -1,5 +1,5 @@
 # Example to check api 29
-I have not finished a handy Android-10/api29 solution for my _example_. It can be started with the [script t]() (loop in line 8 with environment) for Android-8/9, works on my two phones and does a little bit more than "hello world" (prerequisite: OTS with PID1+2+3 ). @xeffyr says:
+I have not finished a handy Android-10/api29 solution for my _example_. It can be started with the [script t](https://github.com/RalfWerner/integrated-process/blob/master/api29/t) (loop in line 8 with environment) for Android-8/9, works on my two phones and does a little bit more than "hello world" (prerequisite: OTS with PID1+2+3 ). @xeffyr says:
 - will work, but with _additional steps_.
 
 If I understand your suggestion correctly, the _additional steps_ refer to `$s` and `make $s; $s` and should be described in the _makefile_.
@@ -19,3 +19,5 @@ Before the APK (my*.apk) are installed, all other Termux/Plugins must be _uninst
 - open the termux app (contains all boot packages)
 - with `termux-setup-storage` you get access to `$a`
 - with `bash $a/t` the packages are installed, and set alias _ll,pp,dd,t_ and links to_**d,u** and **.bashrc** ($a/t).
+
+Shots and Questions in:https://github.com/RalfWerner/integrated-process/issues/2
