@@ -13,7 +13,7 @@ Currently my (full) termux size is (~/u) on _armv7l/Android-9_ is 794Mb (t.tgz) 
 I have omitted Xvnc (second X server), window manager and everything else that is not needed for check, with the exception of ssh, mc and xterm, to have minimal comfort.
 
 If I only use my t77.apk (PID1) and x11.apk (PID2) or create a _virgin termux_ (39Mb/60Mb with ssh + mc) with `rm -rf ../*`, the first start will be a termux size 402Mb installed (multiple confirms required and need 15 minutes).
-## Install APK and start XClient ($s) with _t_.
+## Install APK and start XClient ($s) with _c_.
 Before the APK (my*.apk) are installed, all other Termux/Plugins must be _uninstalled_ on the phone.
 - The data from this path should then be stored in path _/storage/emulated/0/api29_ (`a=d/api29`).
 - Tap on the two APK to install them on phone.
@@ -22,3 +22,4 @@ Before the APK (my*.apk) are installed, all other Termux/Plugins must be _uninst
 - with `bash $a/t` set alias _ll,pp,dd,c_ and links to_**d,u** and **.bashrc** ($a/t) or creates _makefile_ and install the packages.
 
 Shots and Questions in [issue2](https://github.com/RalfWerner/integrated-process/issues/2)
+Github has a limit that my-t77.apk (63Mb) can not be saved - is also [here](https://www.dropbox.com/sh/e34d0nnwingz2c6/AACVbPuTkvXxFgf-LtYy0Ml9a?dl=0) and created with _apksigner_. 
