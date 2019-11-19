@@ -1,4 +1,4 @@
-a=d/api29; alias ll="ls -la" pp="ps -eo pid,ppid,comm,etime" dd="du -hd 1" t="bash ~/.bashrc"
+a=d/api29; alias ll="ls -la" pp="ps -eo pid,ppid,comm,etime" dd="du -hd 1" c="bash $a/t"
 if [ ! -d d ];then ln -s /storage/emulated/0 d; ln -s ../usr u; ln -s $a/t .bashrc; fi
 s=~/check.exe; X=Xwayland; export DISPLAY=:0 PATH=./:/bin:~/u/bin LD_LIBRARY_PATH=~/u/lib
 if [ -f $a/makefile ];then test -z `pgrep -o sshd` && sshd; test $0 = "$SHELL" && return
