@@ -1,5 +1,5 @@
 # Example to check api 29
-I have not finished a handy Android-10/api29 solution for my _example_. It can be started with the [script t](https://github.com/RalfWerner/integrated-process/blob/master/api29/t) (loop in **line 8** with environment) for Android-8/9, works on my two phones and does a little bit more than "hello world" (prerequisite: OTS with PID1+2+3 ). @xeffyr says:
+I have not finished a handy Android-10/api29 solution for my _example_. It can be started with the [script t](https://github.com/RalfWerner/integrated-process/blob/master/api29/t) (loop in **line 8** with environment) for Android-8/9, works on my two phones and does a little bit more than "hello world" (prerequisite: **OTS**=_One Touch Start_ of Termux and X-Server with PID1+2+3 ). @xeffyr says:
 - will work, but with _additional steps_.
 
 If I understand your suggestion correctly, the _additional steps_ refer to `$s` and `make $s; $s` and should be described in the _makefile_ (create in **line 15**).
@@ -16,7 +16,7 @@ If I only use my t77.apk (PID1) and x11.apk (PID2) or create a _virgin termux_ (
 ## Install APK and start XClient ($s) with _c_.
 Before the APK (my*.apk) are installed, all other Termux/Plugins must be _uninstalled_ on the phone.
 - The data from this path should then be stored in path _/storage/emulated/0/api29_ (`a=d/api29`).
-- Tap on the two APK to install them on phone.
+- Tap on the two APK (more in [dropbox](https://www.dropbox.com/sh/e34d0nnwingz2c6/AACVbPuTkvXxFgf-LtYy0Ml9a?dl=0)) to install them on phone.
 - open the termux app (contains all boot packages)
 - with `termux-setup-storage` you get access to `$a`
 - with `bash $a/t` set alias _ll,pp,dd,c_ and links to_**d,u** and **.bashrc** ($a/t) or creates _makefile_ and install the packages.
