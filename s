@@ -13,21 +13,21 @@ if [ ! -f ~/t ];then d=`dirname $0`;a=$d/../$1.tgz; test -f $a && tar -xzf $a -C
  x="termux-api imagemagick-x mpv-x make openssh mc clang libxpm gnupg libxi xwayland git wget"
  pkg in x11-repo; pkg in $x xterm fluxbox tigervnc feh openbox pcmanfm xorgproto proot apksigner
  h=https://its-pointless.github.io; p=pointless.gpg; wget $h/$p; apt-key add $p
- x="libmpc libisl setup-scripts gcc-8 libgfortran5"; $e 'bash ~/.bashrc $@'>t; chmod +x t
+ x="libmpc libisl setup-scripts gcc-8 libgfortran5 htop"; $e 'bash ~/.bashrc $@'>t; chmod +x t
  $e deb $h/files/ termux extras>>$ul; pkg in $x; setupclang-gfort-8; rm -r storage $p
  s=Home/sd;printf " %s\n" "SDB  120   *   $s/ip/" "FONT 2:202834.1" "TSDB $s/ip/EXE"\
  "EDITOR         IP      display" "TSDB $s">.issy; $e "geometry=1440x1440">>.vnc/config
  if [ `type ps|grep -c hashed` = 0 ];then cd u/bin; mv ps ps0; ln -s busybox ps; cd; fi
 fi ; s=.shortcuts; z=com.termux/.app.TermuxActivity; p1=`pgrep -o Xvnc`; p2=`pgrep -o $X`
-if [ ! -d $s -a $PWD = $HOME ];then mkdir $s; cd $s;yy="am start -n $y";$e htop>htop
- $e "$yy;./t :0 c">favorite-check;$e "$yy;./t :0 t">touch-check;$e ./t d>dialog-API
- $e "ls -l;env;$p;pstree;exit 1">ls-env-ps;$e mc sd/ip>mc;$e ./t o>pcmanfc-VNC
- $e "$yy;./t :0 b">xlunch-Xorg;$e ./t b>xlunch-VNC;$e "$yy;./t :0 x">pcmanfc-Xorg; cd; fi
+if [ ! -d $s -a $PWD = $HOME ];then mkdir $s; cd $s;yy="am start -n $y;./t ";$e htop>htop
+ $e "$yy:0 c">favorite-check;$e "$yy:0 t">touch-check;$e ./t d>dialog-API
+ $e "ls -l;env;$p;pstree;exit 1">ls-env-ps;$e mc sd/ip>mc;$e ./t o>pcmanfc-VNC;$e "$yy:0 i">IP
+ $e "$yy:0 b">xlunch-Xorg;$e ./t b>xlunch-VNC;$e "$yy:0 x">pcmanfc-Xorg; cd; fi
 # nl=`echo $(dirname $(pm path com.termux | cut -d: -f2))/lib`
 # =======> use as bashrc ($0=$SHELL) pkg list-in |grep -c arch
 if [ $0 = bash ];then test $PWD != $HOME && $e "new $0 in $PWD `ll;env;pp`"; return
 elif [ $0 = "$SHELL" -o $0 = /bin/bash ];then x=om.termux.wtermux/.MainActivity
-export PATH=./:~/:$PATH DISPLAY=:1; test $0 = /bin/bash && r=root
+export PATH=./:~/:$PATH DISPLAY=:1; r=`pgrep -n libproot`; test $0 = /bin/bash && r=root
 f="\\[\\e[01;34m\\][\\[\\e[0m\\]\\[\\e[00;32m\\]\\w\\[\\e[0m\\]\\[\\e[01;34m\\]]\\[\\e"
 PS1="$r$f[0;34m\\]\\[\\e[0m\\]\\[\\e[1;37m\\]\\$\\[\\e[0m\\]\\[\\e[00;37m\\] \\[\\e[0m\\]"
 test -z $p2 && am start -n $x; test ! -d TMP && mkdir TMP; test -z `pgrep -o sshd` && sshd
@@ -104,10 +104,10 @@ if [ $x = x -o $x = o ];then g=40x20; WM=fluxbox; test $x = o && WM=openbox
  elif [ $x = t ];then s=~/TMP/touch.exe; test "$p" = "" && p="petm.xpm check.jpeg"
  elif [ $x = p -o $x = a ];then n=`identify $p|cut -d' ' -f3`; s=display
   test $x = a && s=animate; s="$s -resize $g -geometry $g+0+0"; i=0
- elif [ $x = b ];then s=~/TMP/xlunch.exe; g=`cd $I/..;pwd`/xlunch/extra; b=$g/wp.jpg;b=check.png
+ elif [ $x = b ];then s=~/TMP/xlunch.exe; g=`cd $I/..;pwd`/xlunch/extra
   c="-f $g/OpenSans-Regular.ttf/20 -i $g/sample_entries.dsv -L $g/highlight.png --bgfill"
-  b="-g $b";test "$p" = d && p="-d $b $c --dontquit"; test "$p" = "" && p="$b $c -b 240\
-  --iconpadding 20 --textpadding 10 --paddingswap --leastmargin 10";# --outputonly
+  b=$g/wp.jpg; b=check.png; test "$p" = d && p="-d -g $b $c --dontquit"
+  test -z "$p" && p="$c -b 240 -I 20 -T 10 -X -l 10 -g $b"
  elif [ $x = c ];then s=~/TMP/check.exe; test -z "$p" && p="P*pm s *.c p*m :$fc.400"
 fi ; while [ 1 ];do cd $I; test $i = 9 && make $s; $e "$DISPLAY ($x) $s $p"
  test $x = f && cd ..; $s $p; i=$?; test $i != 9 && break;done ; exit
