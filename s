@@ -38,7 +38,7 @@ if [ ! -f u/bin/$X ];then $e "$X missing";elif [ -z $p2 ];then d="-display :0";$
  sleep 1; test ! -z "$I" -a -z "`pgrep -o $I`" &&\
  aterm $d -geometry 40x20+0+0 -fn $AC-24-*-*-*-*-*-*-* -bg '#eeeece' -fg blue &
 elif [ $0 = /bin/bash ];then return; fi; $e "moin sshd $DPY, $X:$p2, Xvnc:$p1"
-h=33; alias hf="sftp -P 8022 $D$h" h="ssh -p 8022 $D$h" k="kill $PPID"; return
+h=33; alias hf="sftp -P 8022 $D$h" h="ssh -p 8022 $D$h" k="kill -9 $PPID"; return
 #
 # =======> create *.tgz and "on devive builds" (termux-setup-storage)
 elif [ "$1" = tgz ];then c=sd/t.tgz; cd; date; ls -lh sd/*tgz
