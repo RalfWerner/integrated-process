@@ -1,5 +1,5 @@
-# to the script s
-It is divided in different sections but could use outside of termux as _bash_ script (partially) too.
+# to the [script s](https://github.com/RalfWerner/integrated-process/edit/master/s)
+It is divided in different sections but could use outside of termux as _bash_ script (partially) too. The first Termux update contains 11 widget scripts (`~/.shortcuts` lines 22-25). In order to display this on the start screen (_Long Tap_) this must be set in the widget management of the mobile phone. The corresponding functions are somewhat different on my two devices.
 ## Virgin Termux (vt) update with pkg ... (pu) or *.tgz (tu)
 This requires a `*.apk` (for example, termux_73) and a first open (bash prompt) from Termux.
 To perform this section, there must be _no_ **t** file (generated here) and the required data must be available on the phone in `~/sd`. (including **s** itself).
