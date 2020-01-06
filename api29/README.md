@@ -23,3 +23,5 @@ Before the APK (my*.apk) are installed, all other Termux/Plugins must be _uninst
 
 Shots and Questions in [issue2](https://github.com/RalfWerner/integrated-process/issues/2)
 Github has a limit that my-t77.apk (63Mb) can not be saved - is also [here](https://www.dropbox.com/sh/e34d0nnwingz2c6/AACVbPuTkvXxFgf-LtYy0Ml9a?dl=0) and created with _apksigner_. 
+## Package update _**pu**_ here (api29) and complete
+can also be done with *.tgz files (_**tu**_) if the files exist and were updated with `pkg up` before creation. These files are then (on gigaset) 131 and 355 Mb in size and _**tu**_ is much faster than _**pu**_.
