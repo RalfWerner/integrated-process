@@ -13,3 +13,4 @@ The two attempts (sparkle, lorie) to use Xorg under Termux have been abandoned. 
 Mouse, pointer and keyboard are not supported in the current version, so at the end (1:21ff) of the video, the target functionality is demonstrated on a pad with MobaX
 
 https://github.com/RalfWerner/integrated-process/blob/master/videos/Xorg_wayland.mp4
+https://user-images.githubusercontent.com/45426380/145066561-17964598-a831-405d-9543-ab84384b548d.mp4 
