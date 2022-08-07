@@ -11,3 +11,5 @@ the recommended Xvnc server for Termux is similar to the TV, behaving like a fin
 ## Xorg_wayland & Co
 The two attempts (sparkle, lorie) to use Xorg under Termux have been abandoned. the sparkle version was the best so far, but unfortunately had segfaults that could not be fixed. A third attempt was started with [Xwayland](https://en.wikipedia.org/wiki/X.Org_Server#XWayland). in the video current bugs but also benefits are shown.
 Mouse, pointer and keyboard are not supported in the current version, so at the end (1:21ff) of the video, the target functionality is demonstrated on a pad with MobaX
+
+https://github.com/RalfWerner/integrated-process/blob/master/videos/Xorg_wayland.mp4
