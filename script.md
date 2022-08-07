@@ -2,8 +2,8 @@
 I use OTS to start all processes (SSH, X11 ... and installs) with _One Touch_. So that it also works with a virgin app installation, I use mainly two scripts (`uu.sh` and `~/i/bashrc`) that are outside of **Termux** and a symlink: `ln -s  /storage... sd`).
 
 After download/installation of App+Plugin (APK) and boatstrap, copy `uu.sh` with the file app to `~`. Start there with `. uu.sh .`
-Then following symlinks exist: `u, sd, i, .bashrc`. The environment can be checked with the commands: `alias; pp; ll`. If `~/sd/t*.tgz` a backup contains, this is restored. The use of the two scripts is displayed with `i` and `t` (alias without arguments).
-# to the [script s](https://github.com/RalfWerner/integrated-process/edit/master)
+Then following symlinks exist: `u,sd,i,.bashrc`. The environment can be checked with alias `pp;ll`. If a backup extist (`~/sd/t*.tgz`), this will restored. The use of the two scripts is displayed with `u` and `t` (alias without arguments).
+# to the [script bashrc](https://github.com/RalfWerner/integrated-process/edit/master)
 It is divided in different sections but could use outside of termux as _bash_ script (partially) too. The first Termux update contains 11 widget scripts (`~/.shortcuts` lines 22-25). In order to display this on the start screen (_Long Tap_) this must be set in the widget management of the mobile phone. The corresponding functions are somewhat different on my two devices.
 ## Virgin Termux (vt) update with pkg ... (pu) or *.tgz (tu)
 This requires a `*.apk` (for example, termux_73) and a first open (bash prompt) from Termux.
