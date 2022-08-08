@@ -1,7 +1,7 @@
 # OTS means One Touch Start
 I use [OTS](https://github.com/termux/termux-float/issues/37#issuecomment-916777123) to start all processes (SSH, X11 ... and installs) with _One Touch_. So that it also works with a virgin app installation, are mainly two scripts (`uu.sh` and `~/i/bashrc`) that are outside of **Termux** and a symlink: `ln -s  /storage... sd`) needet.
 
-After download/installation of App+Plugin (APK) and bootstrap, copy `uu.sh` with the file app to `~`. Start there with `. uu.sh .`
+After download/installation of App+Plugin (APK) and bootstrap, will `uu.sh` with the file App to `~` copied. Start there with `. uu.sh .`
 Thereafter following symlinks exist: `u,sd,i,.bashrc`. The environment can be checked with alias `pp;ll`. If a backup extist (`~/sd/t*.tgz`), this will restored. The useage of the two scripts is displayed with aliases: `u` and `t` (without arguments).
 # to the [script bashrc](https://github.com/RalfWerner/integrated-process/edit/master)
 It is divided in different sections but could use outside of termux as _bash_ script (partially) too. The first Termux update contains 11 widget scripts (`~/.shortcuts` lines 22-25). In order to display this on the start screen (_Long Tap_) this must be set in the widget management of the mobile phone. The corresponding functions are somewhat different on my two devices.
