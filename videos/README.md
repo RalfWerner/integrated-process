@@ -1,16 +1,14 @@
 # videos and pictures to processes
-Here are examples of controlling Termux / X11 apps as `* .mp4` and` '* .jpg` related to programs of this repo.
+Here are examples of controlling Termux/X11 apps as `*.mp4` and` '*.jpg` related to programs of this repo.
 An app in Termux can be portrait or landscape depending on the rotation of the phone in your hand, which in the current case is 1440x720 or vice versa.
 Partially the examples are also on my pad and PC (unrotatable but different resolutions)
 ## xserver XSDL
 If there is a better Xserver, XSDL should _**not**_ be used because it is based out of service and an old xorg. the rotation is _not really_ supported and pinch/multitouch is impossible. in `xserver.mp4` are examples of xterm, display, nedit shown.
 ## Termux mc (midnight commander)
 The **mc** functions with the Termux pinch are exemplary for X11 clients with _text/cursor functions_ and finger control on phones.
-The video was created in 2019. In the meantime, some improvements have been made in the app -so the administration of the OS-KB (often not required) is clearly possible via an EK. The recording took place on a PC with TV = TeamViewer, on which a Hauwei distances is worked on.
+The video was created in 2019. In the meantime, some improvements have been made in the app -so the administration of the OS-KB (often not required) is clearly possible via an EK. The recording took place on a PC with **TV**=TeamViewer, on which a Hauwei distances is worked on.
 
 https://user-images.githubusercontent.com/45426380/183356048-6426e5ce-1485-41a8-ac00-ef35885c2e8d.mp4
-
-
 ## TV (Team Viewer) and Xvnc
 the recommended Xvnc server for Termux is similar to the TV, behaving like a finger/screen. in `TVpad_phone.mp4`. The external App **Real-VNC** and the **Xvnc** start (tigervnc package) needet. In t(s) start is it done in Termux-start and use of of none as display reference.
 ## Xorg_wayland & Co
