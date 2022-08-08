@@ -70,3 +70,4 @@ bash bashrc t E*& # to start touch.c - see TEST in first line of source of N=3 i
 "  +++++++++++++++++ ,,,,,,,,,, *****************                                                                                                      ",
 "                                                                                                                                                      "}
 ```
+Die Datei kann auch mit nedit bearbeitet werden
