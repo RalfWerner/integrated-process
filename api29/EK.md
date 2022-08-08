@@ -68,5 +68,5 @@ bash bashrc t E*& # to start touch.c - see TEST in first line of source of N=3 i
 "  +++++++++++++++++ ,,,,,,,,,, *****************                                                                                                      ",
 "                                                                                                                                                      "}
 ```
-## nedit `*.xpm`
-Die Datei kann auch mit nedit bearbeitet werden
+## edit `*.xpm`
+Die Datei kann auch mit nedit bearbeitet werden oder mit [mc](https://github.com/RalfWerner/integrated-process/blob/master/videos.md#mc)
