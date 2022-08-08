@@ -3,7 +3,7 @@ I use [OTS](https://github.com/termux/termux-float/issues/37#issuecomment-916777
 
 After download/installation of App+Plugin (APK) and bootstrap, will `uu.sh` with the file App copied to `~`. Start there with `. uu.sh .`.
 Thereafter should the following symlinks exist: `u,sd,i,.bashrc`. The environment can be checked with alias `pp;ll`. If a backup extist (`~/sd/t*.tgz`), this will restored. The useage of the two scripts is displayed with aliases: `u` and `t` (without arguments).
-# to the script [bashrc](https://github.com/RalfWerner/integrated-process/api29)
+# to the script [bashrc](https://github.com/RalfWerner/integrated-process/edit/master/script.md#bashrc)
 It is divided in different sections but could use outside of termux as _bash_ script (partially) too. The first Termux update contains 11 widget scripts (`~/.shortcuts` lines 22-25). In order to display this on the start screen (_Long Tap_) this must be set in the widget management of the mobile phone. The corresponding functions are somewhat different on my two devices.
 ## Virgin Termux (vt) update with pkg ... (pu) or *.tgz (tu)
 This requires a `*.apk` (for example, termux_73 or [my backup](https://www.dropbox.com/s/ug071qoox8gwf1c/ip.zip?dl=0)) and a first open (bash prompt) from Termux.
