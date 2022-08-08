@@ -1,5 +1,5 @@
 # Example to check api 29
-I have not finished a handy Android-10/api29 solution for my _example_. It can be started with the [script t](https://github.com/RalfWerner/integrated-process/blob/master/api29/t) (loop in **line 8** with environment) for Android-8/9, works on my two phones and does a little bit more than "hello world" (prerequisite: **OTS**=_One Touch Start_ of Termux and X-Server with PID1+2+3 ). @xeffyr says:
+I have not finished a handy Android-10/api29 solution for my _example_. It can be started with the [script t](https://github.com/RalfWerner/integrated-process/blob/master/api29/t) (loop in **line 8** with environment) for Android-8/9, works on my two phones and does a little bit more than "hello world" (prerequisite: **OTS**=_One Touch Start_ of Termux and X-Server with PID1+2+3 ). [Leonid](#abbr) says:
 > will work, but with _additional steps_, running custom executables _**not**_ possible but generally environment will be same.
 
 If I understand your suggestion correctly, the _additional steps_ refer to `$s` (**line 3**) and `make $s; $s` and should be described in the _makefile_ (create in **line 15**).
@@ -24,8 +24,11 @@ Before the APK (my*.apk) are installed, all other Termux/Plugins must be _uninst
 Shots/discusion and FAQ in [#2](https://github.com/RalfWerner/integrated-process/issues/2)
 Github has a limit that my-t77.apk (63Mb) can not be saved - is also [here](https://www.dropbox.com/sh/e34d0nnwingz2c6/AACVbPuTkvXxFgf-LtYy0Ml9a?dl=0) and created with _apksigner_. 
 ## Package update _**pu**_ here (api29) and complete and with _uu*)._
-can also be done with *.tgz files (_**tu**_) if the files exist and were updated with `pkg up` before creation. The *.tgz are then (on gigaset) here: 131Mb and complete: 355Mb in size and _**tu**_ is much faster than _**pu**_. Steps to install [uu*)](*))
+can also be done with *.tgz files (_**tu**_) if the files exist and were updated with `pkg up` before creation. The *.tgz are then (on gigaset) here: 131Mb and complete: 355Mb in size and _**tu**_ is much faster than _**pu**_. Steps to install [uu](#abbr).
 - First steps decribed [here](https://github.com/RalfWerner/integrated-process/issues/2#issuecomment-572552197) ff - to use ubuntu in proot
 - update of [script t](https://github.com/RalfWerner/integrated-process/blob/master/api29/EK.md#nedit) in progress - will test the process `ln -s /sdcard/api29/t .bashrc` and both _**pu**_ (termux+ubuntu).
 
-*) abbreviation uu=ubuntu (double u) another possibility would be triple u (so many u's contain this linux variant) is used as`alias uu=uu/uu.sh`and path, because this can be easily entered on the on-screen KB.
+### abbr
+uu=ubuntu (double u) another possibility would be triple u (so many u's contain this linux variant) is used as`alias uu=uu/uu.sh`and path, because this can be easily entered on the on-screen KB.
+
+Leonid: One of the famous Termux Developers
