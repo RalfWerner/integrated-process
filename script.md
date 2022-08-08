@@ -1,19 +1,19 @@
 # OTS means One Touch Start
-I use OTS to start all processes (SSH, X11 ... and installs) with _One Touch_. So that it also works with a virgin app installation, I use mainly two scripts (`uu.sh` and `~/i/bashrc`) that are outside of **Termux** and a symlink: `ln -s  /storage... sd`).
+I use [OTS](https://github.com/termux/termux-float/issues/37#issuecomment-916777123) to start all processes (SSH, X11 ... and installs) with _One Touch_. So that it also works with a virgin app installation, are mainly two scripts (`uu.sh` and `~/i/bashrc`) that are outside of **Termux** and a symlink: `ln -s  /storage... sd`) needet.
 
-After download/installation of App+Plugin (APK) and boatstrap, copy `uu.sh` with the file app to `~`. Start there with `. uu.sh .`
-Then following symlinks exist: `u,sd,i,.bashrc`. The environment can be checked with alias `pp;ll`. If a backup extist (`~/sd/t*.tgz`), this will restored. The use of the two scripts is displayed with `u` and `t` (alias without arguments).
+After download/installation of App+Plugin (APK) and bootstrap, copy `uu.sh` with the file app to `~`. Start there with `. uu.sh .`
+Thereafter following symlinks exist: `u,sd,i,.bashrc`. The environment can be checked with alias `pp;ll`. If a backup extist (`~/sd/t*.tgz`), this will restored. The useage of the two scripts is displayed with aliases: `u` and `t` (without arguments).
 # to the [script bashrc](https://github.com/RalfWerner/integrated-process/edit/master)
 It is divided in different sections but could use outside of termux as _bash_ script (partially) too. The first Termux update contains 11 widget scripts (`~/.shortcuts` lines 22-25). In order to display this on the start screen (_Long Tap_) this must be set in the widget management of the mobile phone. The corresponding functions are somewhat different on my two devices.
 ## Virgin Termux (vt) update with pkg ... (pu) or *.tgz (tu)
-This requires a `*.apk` (for example, termux_73) and a first open (bash prompt) from Termux.
+This requires a `*.apk` (for example, termux_73 or [my backup](https://www.dropbox.com/s/ug071qoox8gwf1c/ip.zip?dl=0)) and a first open (bash prompt) from Termux.
 To perform this section, there must be _no_ **t** file (generated here) and the required data must be available on the phone in `~/sd`. (including **s** itself).
 This can be an sdcard or internal memory (sd=d) that can be used with `termux-setup-storage` in the script. For this are set up symlinks in `~/`.
 Alternatively, a **tar/*.tgz update** can be used (below) if a _*.tgz_ of a previous installation exists. This is much faster (15 seconds) than **pkg**.
 
 Is _$d_ assigned (see below) the update could start with:`bash $d/ip/s $t`.
 ## ~/.bashrc
-Is also a symlink to **s** itself (`~/sd/ip/bashrc`) and _checks_ the state of the installation before the first prompt:
+In general, it's part of the [object](https://github.com/ralfwerner/integrated-process#ip-objects) and also a symlink (`~/sd/ip/bashrc`) and _checks_ the state of the installation before the first prompt:
 - start some processes (PID): sshd, Xvnc and possibly Xwayland (Xorg)
 - and set some aliases: pp to _check_ PID, ll=`ls -la` to list files, d=`du -hd 1` to _check_ space
 ## various test functions with alias t
