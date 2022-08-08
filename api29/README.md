@@ -1,5 +1,5 @@
 # Example to check api 29
-I have not finished a mobile Android-10/api29 solution for my _example_. It can be started with the [bashrc](https://github.com/RalfWerner/integrated-process/blob/master/api29/bashrc) (loop in **line 8** with environment) for Android-8/9, works on my two phones and does a little bit more than "hello world" (prerequisite: **OTS**=_One Touch Start_ of Termux and X-Server with PID1+2+3 ). [Leonid](#abbr) says:
+I have not finished a mobile Android-10/api29 solution for my _example_. It can be started with the [bashrc](https://github.com/RalfWerner/integrated-process/blob/master/api29/bashrc#178) (loop in **line 8** with environment) for Android-8/9, works on my two phones and does a little bit more than "hello world" (prerequisite: **OTS**=_One Touch Start_ of Termux and X-Server with PID1+2+3 ). [Leonid](#abbr) says:
 > will work, but with _additional steps_, running custom executables _**not**_ possible but generally environment will be same.
 
 If I understand your suggestion correctly, the _additional steps_ refer to `$s` (**line 3**) and `make $s; $s` and should be described in the _makefile_ (create in **line 15**).
@@ -13,13 +13,14 @@ Currently my (full) termux size is (~/u) on _armv7l/Android-9_ is 794Mb (t.tgz) 
 I've omitted Xvnc (second X server), window manager (WM) and everything else that is not needed for check, with the exception of ssh, mc and xterm, to have minimal comfort.
 
 If I only use my t82.apk (PID1) and x11.apk (PID2) or create a _virgin termux_ (39Mb and 60Mb with ssh+mc) with `rm -rf ../*`, the first start (_**pu**_=package update) will be a termux size 402Mb installed (multiple confirms required and need 15 minutes).
-## Install APK and start XClient ($s) with _c_.
-Before the APK (my*.apk) are installed, all other Termux/Plugins must be _uninstalled_ on the phone.
+## Install APK and start XClient (`t c`) with _c=check_.
+Before the APK (`*.apk`) are installed, all other Termux/Plugins must be _uninstalled_ on the phone.
 - The data from this path should then be stored in path _/storage/emulated/0/api29_ (`a=d/api29` or `sd/`).
-- Tap on the two APK (more in [dropbox](https://www.dropbox.com/sh/e34d0nnwingz2c6/AACVbPuTkvXxFgf-LtYy0Ml9a?dl=0)) to install them on your phone - the ARCHs of t82/t84(t64:aarch64 only) are treated _separately_ here.
+- Tap on the APK (more in [dropbox](https://www.dropbox.com/s/ug071qoox8gwf1c/ip.zip?dl=0) (zip version) to install them on your phone strep with **Xvnc** see [here](https://github.com/bk138/multivnc/issues/176). Next steps are ommited than
+- [old](https://www.dropbox.com/sh/e34d0nnwingz2c6/AACVbPuTkvXxFgf-LtYy0Ml9a?dl=0) - the ARCHs of t82/t84(t64:aarch64 only) are treated _separately_.
 - open the termux app (contains all boot packages)
-- with `termux-setup-storage` you get access to `$a`
-- with `bash $a/t` set alias _ll,pp,dd,c_ and links to_**d,u** and **.bashrc** ($a/t) or creates _makefile_ and install the packages.
+- with `termux-setup-storage` you get access to `$f and ~/sd`
+- with `bash ~i/bashrc` set alias _ll,pp,dd,c_ and links to_**d,u** and **.bashrc** ($a/t) or creates _makefile_ and install the packages.
 
 Shots/discusion and FAQ in [#2](https://github.com/RalfWerner/integrated-process/issues/2)
 Github has a limit that my-t77.apk (63Mb) can not be saved - is also [here](https://www.dropbox.com/sh/e34d0nnwingz2c6/AACVbPuTkvXxFgf-LtYy0Ml9a?dl=0) and created with _apksigner_. 
