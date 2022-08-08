@@ -31,4 +31,4 @@ can also be done with *.tgz files (_**tu**_) if the files exist and were updated
 ### abbr
 uu=ubuntu (double u) another possibility would be triple u (so many u's contain this linux variant) is used as`alias uu=uu/uu.sh`and path, because this can be easily entered on the on-screen KB.
 
-Leonid: One of the famous Termux Developers (@xeffyr/@sylirre)
+Leonid: One of the famous Termux Developers (@xeffyr or @sylirre)
