@@ -7,10 +7,8 @@ As discussed [here](https://github.com/termux/termux-x11/discussions/46#discussi
 The optical basis is a `*xpm` file with icons (Nx50x45) that are placed and scaled on the screen or can be part of an Xclient. I use `touch.c` (TEST=0-4) with one or two windows with XLIB/XCB) and `check.c` (several windows including text/tables/icon processing in XLIB) for demonstrating the finger functions.
 Use is of course only possible if the Xclients also contains the source config.c and not in `aterm` or `fluxbox`. If several application is used, each of their own icons also has an exchange of the settings via the file: `ek.tmp` is possible.
 ## The Mouse/Tab Icon
-
 If **MBn** keys are used to emulate the three mouse with n=1-3. Damit applications can also use several MB at the same time at the same time the order of the mouse clicks is important, which then color (red, green, blue = 1+ 2+3 or blue, red = 3+1). With a real USB/BT mouse, it is also displayed regardless of the pointer position and set back on MB1 when it is released. With finger or pen, the setting is set with gestures after the first tab-on-icon and remains with all tabs/gestures outside the icons1). The setting gestures are: Horizontal selection of the next/last MB and Vertical: Select additional MB/Toggle keys.
 ## The Ctrl/Alt/Shift/Ins*-icon
-
 On the left, the 4 specified Toggle keys, which are mostly significant together with key events, can also be used in MB campaigns. Real KB often have several same keys or not treated to-do-making keys here.
 On the right are the touch campaign and three other actions that
 ## The Curcor,PG*,Home,End,Enter icon
@@ -70,5 +68,5 @@ bash bashrc t E*& # to start touch.c - see TEST in first line of source of N=3 i
 "  +++++++++++++++++ ,,,,,,,,,, *****************                                                                                                      ",
 "                                                                                                                                                      "}
 ```
-##nedit `*.xpm`
+## nedit `*.xpm`
 Die Datei kann auch mit nedit bearbeitet werden
