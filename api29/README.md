@@ -1,5 +1,5 @@
 # Example to check api 29
-I have not finished a mobile Android-10/api29 solution for my _example_. It can be started with the [bashrc](https://github.com/RalfWerner/integrated-process/blob/master/api29/bashrc#178) (loop in **line 8** with environment) for Android-8/9, works on my two phones and does a little bit more than "hello world" (prerequisite: **OTS**=_One Touch Start_ of Termux and X-Server with PID1+2+3 ). [Leonid](#abbr) says:
+I have not finished a mobile Android-10/api29 solution for my _example_. It can be started with the [bashrc](https://github.com/RalfWerner/integrated-process/blob/master/api29/bashrc#L178#186) (loop in **line 8** with environment) for Android-8/9, works on my two phones and does a little bit more than "hello world" (prerequisite: **OTS**=_One Touch Start_ of Termux and X-Server with PID1+2+3 ). [Leonid](#abbr) says:
 > will work, but with _additional steps_, running custom executables _**not**_ possible but generally environment will be same.
 
 If I understand your suggestion correctly, the _additional steps_ refer to `$s` (**line 3**) and `make $s; $s` and should be described in the _makefile_ (create in **line 15**).
