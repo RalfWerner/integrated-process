@@ -1,4 +1,4 @@
-/* XPM this `*.md` file is an valid **xpm image** matrix with this headline but **not** in _Imlib2_
+/* XPM this `*.md` file is a valid **xpm image** matrix with this headline but **not** in _Imlib2_
 # Extrakeys/Toolbox
 contains special buttons in Termux that are not included in the AOSP-KB or are self-defined. The same are used in Terminal (app) and X11-02.04, but in the current X11 version there are only 4 button + 4 cursor that are in a conflict block (overlapping X11 screen).
 In X11 are additional keys necessary and some are to be treated differently as in the terminal.
@@ -71,5 +71,6 @@ bash bashrc t E*& # to start touch.c - see TEST in first line of source of N=3 i
 "  +++++++++++++++++ ,,,,,,,,,, *****************                                                                                                      ",
 "                                                                                                                                                      "}/*
 ```
-## edit and check `*.xpm`
-The file can also be **edited** with nedit or [check.c](https://github.com/RalfWerner/integrated-process/blob/master/check.c) (use `t c *md`) or [mc](https://github.com/RalfWerner/integrated-process/blob/master/videos.md#mc). to check use newest version of [touch.c](https://github.com/RalfWerner/integrated-process/blob/master/touch.c).*/
+## edit and check
+The `*.xpm` file can also be **edited** with nedit or [check.c](https://github.com/RalfWerner/integrated-process/blob/master/check.c) (use `t c *md`) or [mc](https://github.com/RalfWerner/integrated-process/blob/master/videos.md#mc). To **check** use the newest version (in preparation) of [touch.c](https://github.com/RalfWerner/integrated-process/blob/master/touch.c) and process it with `t t $p` or `t c $p`. As arguments `$p` defaults used and can replaced e.g. by `*pm *g`
+*/
