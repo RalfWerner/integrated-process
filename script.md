@@ -33,4 +33,3 @@ path _d=/storage/6533-6333/; t=t_ in `tar -xzf $d/$t.tgz -C ..`.
 ## further funktions of alias u
 "Elf-Check" is basically a script (part of the bootloop process) that separates the executables from the rest of the data into $ prefix and supplements Symlink.txt with these references.
 This does not change anything at the _bootstrap_, but can be used for all TargetsDK. In contrast to Android-10 and update flowered, only one Symlink is necessary.
-[Extra Keys](https://github.com/RalfWerner/integrated-process/blob/master/api29/EK.md#XPM-file)
