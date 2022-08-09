@@ -1,5 +1,5 @@
 # Integrated-Process
-Abbreviated **IP**, is an _object-oriented_ (below) assessment tool that exists since the late 80's. Here is however only a part treated, which I designate as **CP** and only the extensions to use **CP** without **W**indows **M**anager (**WM**) in [Termux](https://github.com/termux/termux-app) and [X11](https://github.com/termux/termux-wayland) on Android smartphones.
+Abbreviated **IP**, is an _object-oriented_ (below) assessment tool that exists since the late 80's. Here is however only a part treated, which I designate as **CP** and only the extensions to use **CP** without **W**indows **M**anager (**WM**) in [Termux](https://github.com/termux/termux-app) and [X11](https://github.com/termux/termux-x11) on Android smartphones.
 
 Currently here are [sources](#sources) and [scripts](https://github.com/RalfWerner/integrated-process/blob/master/script.md) that I use for **X11** Client/Server-check. Besides the _**Termux**_ environment, sources are also useable in MobaXterm and Debian/Linux. The script [bashrc](https://github.com/RalfWerner/integrated-process/blob/master/bashrc) could use to update a virgin Termux [APK](https://github.com/termux/termux-packages/issues/3535#issuecomment-489430202) with needed packages for check.
 
