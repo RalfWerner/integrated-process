@@ -25,7 +25,7 @@ and Shots/FAQ in [#2](https://github.com/RalfWerner/integrated-process/issues/2)
 ## Package update _**pu**_ here (api29) and complete and with _uu*)._
 can also be done with *.tgz files (_**tu**_) if the files exist and were updated with `pkg up` before creation. The *.tgz are then (on gigaset) here: 131Mb and complete: 355Mb in size and _**tu**_ is much faster than _**pu**_. Steps to install [uu](#abbr).
 - First steps decribed [here](https://github.com/RalfWerner/integrated-process/issues/2#issuecomment-572552197) ff - to use ubuntu in proot
-- update of [script t](https://github.com/RalfWerner/integrated-process/blob/master/api29/EK.md#nedit) in progress - will test the process `ln -s /sdcard/api29/t .bashrc` and both _**pu**_ (termux+ubuntu).
+- update of [script t](https://github.com/RalfWerner/integrated-process/blob/master/api29/EK.md#edit-and-check) in progress - will test the process `ln -s /sdcard/api29/t .bashrc` and both _**pu**_ (termux+ubuntu).
 
 ### abbr
 uu=ubuntu (double u) another possibility would be triple u (so many u's contain this linux variant) is used as`alias uu=uu/uu.sh`and path, because this can be easily entered on the on-screen KB.
