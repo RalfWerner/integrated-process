@@ -13,8 +13,8 @@ If **MBn** keys are used to emulate the three mouse buttons with n=1-3. So appli
 On the left, the 4 specified Toggle keys, which are mostly significant together with key events, can also be used in MB campaigns. Real KB often have several same keys or not treated to-do-making keys here.
 On the right are the touch campaign and three other actions that
 ## The Curcor,PG*,Home,End,Enter icon
-## XPM file, readable by two functions
-In case of available _Imlib2_ (headline strictly like here) with `imlib_load_image` to an scalable **image**. Additional with `XpmReadFileToImage` as **xpm** matrix, possibly unscalable, headline could be extend here and dpy must known. Here are several comment (as in C) in line 2-8 but that is not a problem.
+## XPM file
+Is readable by two functions. In case of available _Imlib2_ (headline strictly like here) with `imlib_load_image` to an scalable **image**. Additional with `XpmReadFileToImage` as **xpm** matrix, possibly unscalable, headline could be extend here and dpy must known. Here are several comment (as in C) in line 2-8 but that is not a problem.
 ``` c
 /* XPM */
 static char *EK.xpm[]={"150 45 16 1",/* width (50xN) hight (45 for icons) color (16x1)
@@ -69,7 +69,7 @@ bash bashrc t E*& # to start touch.c - see TEST in first line of source of N=3 i
 "  +               + ,        , *               *    &&&  &  &             &&&                     & '##'##''##'######'''''''''    ###### ###### ######",
 "  +               + ,        , *               *                           &            &&&&&&&&&&& '##'##''##'#####''''''''''    #####  ###### ######",
 "  +++++++++++++++++ ,,,,,,,,,, *****************                                                                                                      ",
-"                                                                                                                                                      "}
+"                                                                                                                                                      "}/*
 ```
 ## edit and check `*.xpm`
-The file can also be **edited** with nedit or [check.c](https://github.com/RalfWerner/integrated-process/blob/master/check.c) (use `t c *md`) or [mc](https://github.com/RalfWerner/integrated-process/blob/master/videos.md#mc). to check use newest version of [touch.c](https://github.com/RalfWerner/integrated-process/blob/master/touch.c).
+The file can also be **edited** with nedit or [check.c](https://github.com/RalfWerner/integrated-process/blob/master/check.c) (use `t c *md`) or [mc](https://github.com/RalfWerner/integrated-process/blob/master/videos.md#mc). to check use newest version of [touch.c](https://github.com/RalfWerner/integrated-process/blob/master/touch.c).*/
