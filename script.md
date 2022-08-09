@@ -13,7 +13,7 @@ Alternatively, a **tar/*.tgz update** can be used (below) if a _*.tgz_ of a prev
 
 Is _$d_ assigned (see below) the update could start with:`bash $d/ip/s $t`.
 ## bashrc
-In general, it's part of the [object](https://github.com/RalfWerner/integrated-process#ip-objects) and also a symlink [~/i/bashrc](https://github.com/RalfWerner/integrated-process/blob/master/api29/bashrc#L1#L51)) (`ln -s **sd/ip** i` in `~` done by `u . $name`) and _checks_ the state of the installation before the first prompt. more complex [Presteps]([~/sd/ip/bashrc](https://github.com/RalfWerner/integrated-process/blob/master/bashrc#L1#L51)) start severals closed PID do with first shell open in Termux:
+In general, it's part of the [object](https://github.com/RalfWerner/integrated-process/blob/master/README.md#ip-objects) and also a symlink [~/i/bashrc](https://github.com/RalfWerner/integrated-process/blob/master/api29/bashrc#L1#L51)) (`ln -s **sd/ip** i` in `~` done by `u . $name`) and _checks_ the state of the installation before the first prompt. more complex [Presteps]([~/sd/ip/bashrc](https://github.com/RalfWerner/integrated-process/blob/master/bashrc#L1#L51)) start severals closed PID do with first shell open in Termux:
 - start some processes (PID): sshd, Xvnc and/or possibly Xwayland (Xorg)
 - and set some aliases: **pp** to _check_ PID, **ll**=`ls -la` to list files, **d**=`du -hd 1` to _check_ space
 - with `$name` the Path to `~/sd` could changed, when several Objects on th device. default is `ip` on internal storage
