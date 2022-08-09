@@ -27,8 +27,8 @@ The two scripts parts listed above are ignored. **s** is legible, so here are ju
 With `t tgz` you see a separat _usage help_.The most important function is to produce `~/sd/t.tgz` from`~/..`. The process can take 8 to 80 minutes. Subsequently, however, the Termux state can be quickly restored (above) if another Virgin-Termux is used or reinitialized after `rm -r ../*`. 
 Since then **~/sd** is no longer known you have to use the 
 path _d=/storage/6533-6333/; t=t_ in `tar -xzf $d/$t.tgz -C ..`.
+## uu bash
+`uu.sh` is a [script](https://github.com/RalfWerner/integrated-process/blob/master), that is usually **not** in the termux _bootstrap_. So it has to copied [see above](#ots-means-one-touch-start) to `~` or symlinked to `~/sd/uu.sd`. On of the first actions in [bashrc](#bashrc) is `. uu.sh . .` to check genaral states (independent from Object).
 ## further funktions of alias u
 "Elf-Check" is basically a script (part of the bootloop process) that separates the executables from the rest of the data into $ prefix and supplements Symlink.txt with these references.
 This does not change anything at the _bootstrap_, but can be used for all TargetsDK. In contrast to Android-10 and update flowered, only one Symlink is necessary.
-## uu bash
-`uu.sh` is a [script](https://github.com/RalfWerner/integrated-process/blob/master), that is usually **not** in the termux _bootstrap_. So it has to copied [above](#ots) to `~` or symlinked to `~/sd/uu.sd` 
