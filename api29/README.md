@@ -21,7 +21,7 @@ Before the APK (`*.apk`) are installed, all other Termux/Plugins must be _uninst
 - with `termux-setup-storage` you get access to `$f and ~/sd`
 - with `bash ~i/bashrc` set alias _ll,pp,dd,c_ and links to_**d,u** and **.bashrc** ($a/t) or creates _makefile_ and install the packages.
 ## discussion
-and Shots/FAQ in [#2](https://github.com/RalfWerner/integrated-process/issues/2). Github is limit that my-t95.apk (68Mb) can not be saved but is also [here](https://www.dropbox.com/sh/e34d0nnwingz2c6/AACVbPuTkvXxFgf-LtYy0Ml9a?dl=0) and created with private _apksigner_. But this version is outdated. Currently I use last version 118 see [here](https://github.com/termux/termux-app/issues/2155) and [there](https://github.com/termux/termux-app/issues/1072)
+and Shots/FAQ in [#2](https://github.com/RalfWerner/integrated-process/issues/2). Github is limit that my-t95.apk (68Mb) can not be saved but is also [here](https://www.dropbox.com/sh/e34d0nnwingz2c6/AACVbPuTkvXxFgf-LtYy0Ml9a?dl=0) and created with private _apksigner_. But this version is outdated. Currently I use last version 118 see [here](https://github.com/termux/termux-app/issues/2155) and [there](https://github.com/termux/termux-app/issues/1072) together 371 commits oly in this two issues.
 ## Package update _**pu**_ here (api29) and complete and with _uu*)._
 can also be done with *.tgz files (_**tu**_) if the files exist and were updated with `pkg up` before creation. The *.tgz are then (on gigaset) here: 131Mb and complete: 355Mb in size and _**tu**_ is much faster than _**pu**_. Steps to install [uu](#abbr).
 - First steps decribed [here](https://github.com/RalfWerner/integrated-process/issues/2#issuecomment-572552197) ff - to use ubuntu in proot
