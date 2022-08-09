@@ -1,7 +1,8 @@
 # OTS means One Touch Start
-I use [OTS](https://github.com/termux/termux-float/issues/37#issuecomment-916777123) to _Start_ [objects](https://github.com/RalfWerner/integrated-process/tree/master/README.md#ip-objects) on Termux environment all processes (sshd, x11 ... and installs) with _One Touch_. So that it also works with a virgin app installation, are mainly two scripts ([uu.sh](#uu-bash) and [bashrc](#bashrc) that are outside of **Termux** and a symlink: `ln -s  /storage... sd`) needet.
+I use [OTS](https://github.com/termux/termux-float/issues/37#issuecomment-916777123) to _Start_ 
+[objects](https://github.com/RalfWerner/integrated-process/tree/master/README.md#IP-objects) all processes (sshd, x11 ... and installs) with _One Touch_ on Termux environment. So that it also works with a virgin app installation, are mainly two scripts ([uu.sh](#uu-bash) and [bashrc](#bashrc) that are outside of **Termux** and a symlink: `ln -s  /storage... sd`) needet.
 
-After download/[installation](https://github.com/termux/blob/master/termux-app#installation) of App+Plugin (APK) and bootstrap, will [uu.sh](#uu.sh) with the file App copied to `~`. Start there with **`. uu.sh .`**.
+After download/[installation](https://github.com/termux/termux-app/blob/master/README.md#Installation) of App+Plugin (APK) and bootstrap, will [uu.sh](#uu.sh) with the file App copied to `~`. Start there with **`. uu.sh .`**.
 Thereafter should the following symlinks exist: `u,sd,i,.bashrc`. The environment can be checked with alias `pp;ll`. If a backup extist (`~/sd/t*.tgz`), this will restored. The useage of the two scripts is displayed with aliases: `u` and `t` (without arguments).
 # to the script [#~/.bashrc](#bashrc)
 It is divided in different sections but could use outside of termux as _bash_ script (partially) too. The first Termux update contains several widget scripts [`~/.shortcuts`](https://github.com/RalfWerner/integrated-process/blob/master/bashrc#35#38). In order to display this on the start screen (_Long Tap_) this must be set in the widget management of the mobile phone. The corresponding functions are somewhat different on my two devices. and [api29](https://github.com/RalfWerner/integrated-process/blob/master/api29#install-api) [object](https://github.com/RalfWerner/integrated-process/tree/master/api29/#packages)
@@ -32,3 +33,4 @@ path _d=/storage/6533-6333/; t=t_ in `tar -xzf $d/$t.tgz -C ..`.
 ## further funktions of alias u
 "Elf-Check" is basically a script (part of the bootloop process) that separates the executables from the rest of the data into $ prefix and supplements Symlink.txt with these references.
 This does not change anything at the _bootstrap_, but can be used for all TargetsDK. In contrast to Android-10 and update flowered, only one Symlink is necessary.
+[Extra Keys](https://github.com/RalfWerner/integrated-process/blob/master/api29/EK.md#XPM-file)
