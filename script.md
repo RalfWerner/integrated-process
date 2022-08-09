@@ -1,5 +1,5 @@
 # OTS means One Touch Start
-I use [OTS](https://github.com/termux/termux-float/issues/37#issuecomment-916777123) to _Start_ all processes (sshd, x11 ... and installs) with _One Touch_. So that it also works with a virgin app installation, are mainly two scripts ([uu.sh](#uu-bash) and [bashrc](#bashrc) that are outside of **Termux** and a symlink: `ln -s  /storage... sd`) needet.
+I use [OTS](https://github.com/termux/termux-float/issues/37#issuecomment-916777123) to _Start_ [objects](https://github.com/RalfWerner/integrated-process/blob/master/README.md#ip-objects) on Termux environment all processes (sshd, x11 ... and installs) with _One Touch_. So that it also works with a virgin app installation, are mainly two scripts ([uu.sh](#uu-bash) and [bashrc](#bashrc) that are outside of **Termux** and a symlink: `ln -s  /storage... sd`) needet.
 
 After download/[installation](https://github.com/termux/blob/master/termux-app#installation) of App+Plugin (APK) and bootstrap, will [uu.sh](#uu.sh) with the file App copied to `~`. Start there with **`. uu.sh .`**.
 Thereafter should the following symlinks exist: `u,sd,i,.bashrc`. The environment can be checked with alias `pp;ll`. If a backup extist (`~/sd/t*.tgz`), this will restored. The useage of the two scripts is displayed with aliases: `u` and `t` (without arguments).
@@ -13,7 +13,7 @@ Alternatively, a **tar/*.tgz update** can be used (below) if a _*.tgz_ of a prev
 
 Is _$d_ assigned (see below) the update could start with:`bash $d/ip/s $t`.
 ## bashrc
-In general, it's part of the [object](https://github.com/RalfWerner/integrated-process/blob/master/README.md#ip-objects) and also a symlink [~/i/bashrc](https://github.com/RalfWerner/integrated-process/blob/master/api29/bashrc#L1#L51)) (`ln -s **sd/ip** i` in `~` done by `u . $name`) and _checks_ the state of the installation before the first prompt. more complex [Presteps]([~/sd/ip/bashrc](https://github.com/RalfWerner/integrated-process/blob/master/bashrc#L1#L51)) start severals closed PID do with first shell open in Termux:
+In general, it's part of the **object** and also a symlink [~/i/bashrc](https://github.com/RalfWerner/integrated-process/blob/master/api29/bashrc#L1#L51)) (`ln -s **sd/ip** i` in `~` done by `u . $name`) and _checks_ the state of the installation before the first prompt. more complex [Presteps]([~/sd/ip/bashrc](https://github.com/RalfWerner/integrated-process/blob/master/bashrc#L1#L51)) start severals closed PID do with first shell open in Termux:
 - start some processes (PID): sshd, Xvnc and/or possibly Xwayland (Xorg)
 - and set some aliases: **pp** to _check_ PID, **ll**=`ls -la` to list files, **d**=`du -hd 1` to _check_ space
 - with `$name` the Path to `~/sd` could changed, when several Objects on th device. default is `ip` on internal storage
