@@ -3,7 +3,7 @@ I use [OTS](https://github.com/termux/termux-float/issues/37#issuecomment-916777
 
 After download/[installation](https://github.com/termux/termux-app#installation) of App+Plugin (APK) and bootstrap, will `uu.sh` with the file App copied to `~`. Start there with `. uu.sh .`.
 Thereafter should the following symlinks exist: `u,sd,i,.bashrc`. The environment can be checked with alias `pp;ll`. If a backup extist (`~/sd/t*.tgz`), this will restored. The useage of the two scripts is displayed with aliases: `u` and `t` (without arguments).
-# to the script [bashrc](#bashrc)
+# to the script [bashrc](#~/.bashrc)
 It is divided in different sections but could use outside of termux as _bash_ script (partially) too. The first Termux update contains 11 widget scripts (`~/.shortcuts` lines 22-25). In order to display this on the start screen (_Long Tap_) this must be set in the widget management of the mobile phone. The corresponding functions are somewhat different on my two devices. and [api29](https://github.com/RalfWerner/integrated-process/blob/master/api29#install-api) [opject](https://github.com/RalfWerner/integrated-process/tree/master/api29/#packages)
 ## Virgin Termux (vt) update with pkg ... (pu) or *.tgz (tu)
 This requires a `*.apk` (for example, termux_73 or [my backup](https://www.dropbox.com/s/ug071qoox8gwf1c/ip.zip?dl=0)) and a first open (bash prompt) from Termux.
@@ -13,9 +13,9 @@ Alternatively, a **tar/*.tgz update** can be used (below) if a _*.tgz_ of a prev
 
 Is _$d_ assigned (see below) the update could start with:`bash $d/ip/s $t`.
 ## ~/.bashrc
-In general, it's part of the [object](https://github.com/RalfWerner/integrated-process#IP-objects) and also a symlink (`~/sd/ip/bashrc`) and _checks_ the state of the installation before the first prompt:
-- start some processes (PID): sshd, Xvnc and possibly Xwayland (Xorg)
-- and set some aliases: pp to _check_ PID, ll=`ls -la` to list files, d=`du -hd 1` to _check_ space
+In general, it's part of the [object](https://github.com/RalfWerner/integrated-process#IP-objects) and also a symlink [~/i/bashrc](https://github.com/RalfWerner/integrated-process/blob/master/api29/bashrc#L1#L51)) (`ln -s **sd/ip** i` done by `u .`) and _checks_ the state of the installation before the first prompt. more complex [Presteps]([~/sd/ip/bashrc](https://github.com/RalfWerner/integrated-process/blob/master/bashrc#L1#L51)) start severals closed PID do with first shell open in Termux:
+- start some processes (PID): sshd, Xvnc and/or possibly Xwayland (Xorg)
+- and set some aliases: **pp** to _check_ PID, **ll**=`ls -la` to list files, **d**=`du -hd 1` to _check_ space
 ## various test functions with alias t
 since PATH also contains `:.`, **t** is enough to call `bash ~.bashrc $@`. Without parameter, the _usage help_ is displayed or else the described function is executed.
 The two scripts parts listed above are ignored. **s** is legible, so here are just a few special features:
