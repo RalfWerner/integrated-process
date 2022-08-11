@@ -1,3 +1,4 @@
+SPO: https://10.1.0.146:8080 SM-Pad: https://192.168.0.118:8080
 # Integrated-Process
 Abbreviated **IP**, is an _object-oriented_ (below) assessment tool that exists since the late 80's. Here is however only a part treated, which I designate as **CP** and only the extensions to use **CP** without **W**indows **M**anager (**WM**) in [Termux](https://github.com/termux/termux-app) and [X11](https://github.com/termux/termux-x11) on Android smartphones.
 
