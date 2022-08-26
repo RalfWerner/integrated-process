@@ -1,4 +1,4 @@
-[termux-usb -l](https://wiki.termux.com/wiki/Termux-usb) not found/empty/`[]`has anyone done this successfully?[SM-Pad](https://192.168.0.118:8080) from IP Webcam
+[termux-usb -l](https://wiki.termux.com/wiki/Termux-usb) is empty/`[]`when PC connected but Mouse and Camera works [SM-Pad](https://192.168.0.118:8080) and [Gigaset](https://192.168.0.132:8080) from IP Webcam
 # Integrated-Process
 Abbreviated **IP**, is an _object-oriented_ (below) assessment tool that exists since the late 80's. Here is however only a part treated, which I designate as **CP** and only the extensions to use **CP** without **W**indows **M**anager (**WM**) in [Termux](https://github.com/termux/termux-app) and [X11](https://github.com/termux/termux-x11) on Android smartphones.
 
