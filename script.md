@@ -1,10 +1,18 @@
-# OTS means One Touch Start
-I use [OTS](https://github.com/termux/termux-float/issues/37#issuecomment-916777123) to _Start_ 
-[objects](https://github.com/RalfWerner/integrated-process/tree/master/README.md#IP-objects) all processes (sshd, x11 ... and installs) with _One Touch_ on Termux environment. So that it also works with a virgin app installation, are mainly two scripts ([uu.sh](#uu-sh) and [bashrc](#bashrc) that are outside of **Termux** and a symlink: `ln -s  /storage... sd`) needet.
+## OTS means One Touch Start
+I use [OTS](https://github.com/termux/termux-float/issues/37#issuecomment-916777123) to _start_ 
+[objects](https://github.com/RalfWerner/integrated-process/tree/master/README.md#IP-objects) (all processes sshd, x11 ... and package installs) with _One Touch_ in the Termux environment. So that it also works with a _virgin Installation_, mainly two scripts outside of **Termux** are needed ([uu.sh](#uu-sh) and [bashrc](#bashrc)) and symlinks: `ln -s  /storage<> sd`). Mostly is `<>=/emulated/0` for internal storage or `/xxxx-xxxx` for a SD-card (using `df` to show).
 
-After download/[installation](https://github.com/termux/termux-app/blob/master/README.md#Installation) of App+Plugin (APK) and bootstrap, will [uu.sh](#uu-sh) with the file App copied to `~`. Start there with **`. uu.sh .`**.
-Thereafter should the following symlinks exist: `u,sd,i,.bashrc`. The environment can be checked with alias `pp;ll`. If a backup extist (`~/sd/t*.tgz`), this will restored. The useage of the two scripts is displayed with aliases: `u` and `t` (without arguments).
-# to the script [~/.bashrc](#bashrc)
+<details><summary> Steps to repeat the installation (example moto-g7) </summary>
+
+1. The required installation data must be saved or downloaded in the Android environment. They contain the required apps/plugins, the `uu.sh` script (in **apk**) and object data with `bashrc` (in **ip**).
+2. Install the Termux app (in **apk**), open (bootstrap), allow the memory to be authorized and update the packages with `pkg up -y`. All 5 _"Questions"_ should be confirmed with Enter. [Virgin](#virgin)-Termux is thus ready to work as a basis with 3300 files in `~/u` and the permission to` ~/sd`.
+3. The expansion of the plugins and packages left in `~` is carried out with:`bash <>/uu.sh . -` (below). At least the APK: **api** and one XServer (here **x11a**) are installed, if necessary. When archives/backups available, one of them can _now_ be installed. Otherwise the packages of **ssh** and other usefull base tools will be installed, which are then about 5225 files in `~/u`.
+The three apps: **app+API+X11** without the sources now needs: 311+7.3+14.5=333 MB on the device. This can be 10-20 times larger due to the package requirements of an object. However, it is sufficient as a good Linux terminal.
+If the argument `-` is left out or replaced by an object name (default **ip**), this is set up as a link `~/i` in which is `ln -s i/bashrc .bashrc` for new terminal that installs all packages needs by the object.
+</details>
+
+After download/[installation](https://github.com/termux/termux-app/blob/master/README.md#Installation) of App+Plugin (**apk**) and bootstrap, will [uu.sh](#uu-sh) used to _one time_ Start with **`bash uu.sh . -`**. Then should the following symlinks exist: `u,sd,i,.bashrc`. The environment can be checked with alias `pp;ll` etc. If a backup extist (`~/sd/t*.tgz`), this may restored. The _useage_ of the two scripts is displayed with aliases: `u` and `t` (without parameters).
+## to the script [~/.bashrc](#bashrc)
 It is divided in different sections but could use outside of termux as _bash_ script (partially) too. The first Termux update contains several widget scripts [`~/.shortcuts`](https://github.com/RalfWerner/integrated-process/blob/master/bashrc#L35#L38). In order to display this on the start screen (_Long Tap_) this must be set in the widget management of the mobile phone. The corresponding functions are somewhat different on my two devices. and [api29](https://github.com/RalfWerner/integrated-process/blob/master/api29#install-api) [object](https://github.com/RalfWerner/integrated-process/tree/master/api29/#packages)
 ## Virgin Termux (vt) update with pkg ... (pu) or *.tgz (tu)
 This requires a `*.apk` (for example, termux_73 or [my backup](https://www.dropbox.com/s/ug071qoox8gwf1c/ip.zip?dl=0)) and a first open (bash prompt) from Termux.
