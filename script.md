@@ -54,7 +54,7 @@ path _d=/storage/6533-6333/; t=t_ in `tar -xzf $d/$t.tgz -C ..`.
 This does not change anything at the _bootstrap_, but can be used for all TargetsDK. In contrast to Android-10 and update flowered, only one Symlink is necessary.
 </details>
 
-### MB_Helper in X11 Server
+## MB_Helper in X11 Server
 In the following video, the XClients _fluxbox and aterm_ are displayed, the trouchMode **Trackpad** is selected and the device is moto g(7). x11-Version **1e7857c** has a pre+post-MB display, which corresponds to the three mouse buttons 1=L,2=M,3=R. Gboard is used as the KB and the back key is used to turn on the EK bar, in which the EK-KB button turns on the _floating_ KB (covers EK). Then: portrait rotation, which **turns KB off**. Then the two MB helpers are turned on with the first EK button. Post-MB over aterm and pre-MB below and the _floating_ KB is turned on (**covers pre-MB and EK disappears**).
 
 https://github.com/RalfWerner/integrated-process/assets/45426380/a1ad1722-74b3-4b05-8024-0ae0d27a6eb7
