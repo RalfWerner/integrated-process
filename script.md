@@ -1,3 +1,5 @@
+### MB_Helper in X11 Client
+Eine Möglichkeit MB=Maus-Buttons ohne Maus (finger/stift) zu nutzen, ist die Erweiterung durch den `EK_X5.h` **Header** in der Quelle des XClients oder die [Server](https://github.com/RalfWerner/integrated-process/edit/master/script.md#mb_helper-in-x11-server) Funktionen. Der Header macht mehr als dies, Hier wird aber nur die **MB** Funktion beschrieben. Der **Header** kann mit main:(`#define TEST 9` und `#include "EK_X5.h"`) oder als teil von z.B. _aterm_ verwendet werden.
 ## OTS means One Touch Start
 I use [OTS](https://github.com/termux/termux-float/issues/37#issuecomment-916777123) to _start_ 
 [objects](https://github.com/RalfWerner/integrated-process/tree/master/README.md#IP-objects) (all processes sshd, x11 ... and package installs) with _One Touch_ in the Termux/Widget environment. So that it also works with a _virgin Installation_, mainly two scripts outside of **Termux** are needed ([uu.sh](#uu-sh) and [bashrc](#bashrc)) and symlinks: `ln -s  /storage<> sd`). Mostly is `<>=/emulated/0` for internal storage or `/xxxx-xxxx` for a SD-card (using `df` to show). In addition to **Termux** are also, **X11** and other plugins are used. Typical is a mobile that is operated with the fingers, but may be connected to pens, mice and external keyboards.
@@ -50,3 +52,14 @@ path _d=/storage/6533-6333/; t=t_ in `tar -xzf $d/$t.tgz -C ..`.
 "Elf-Check" is basically a script (part of the bootloop process) that separates the executables from the rest of the data into $ prefix and supplements Symlink.txt with these references.
 This does not change anything at the _bootstrap_, but can be used for all TargetsDK. In contrast to Android-10 and update flowered, only one Symlink is necessary.
 </details>
+
+### MB_Helper in X11 Server
+In the following video, the XClients _fluxbox and aterm_ are displayed, the trouchMode **Trackpad** is selected and the device is moto g(7). x11-Version **1e7857c** has a pre+post-MB display, which corresponds to the three mouse buttons 1=L,2=M,3=R. Gboard is used as the KB and the back key is used to turn on the EK bar, in which the EK-KB button turns on the _floating_ KB (covers EK). Then: portrait rotation, which **turns KB off**. Then the two MB helpers are turned on with the first EK button. Post-MB over aterm and pre-MB below and the _floating_ KB is turned on (**covers pre-MB and EK disappears**).
+
+https://github.com/RalfWerner/integrated-process/assets/45426380/a1ad1722-74b3-4b05-8024-0ae0d27a6eb7
+
+Then a landscape rotation is made, which **turns KB off again, post-MB disappears and EK covers pre-MB**. If KB is turned on and changed to _Fixed_, pre-MB also disappears. After another portrait rotation, turning KB on and "Fixed", post-MB disappears but EK is back above the KB.
+
+If the pre/post MB display always appears completely and can be used, this is a great feature.
+
+Actually, I only need Pre-MB. It could also be used for all touchMode inputs (not just stylus) and _multiple_ Pre-MB selections would also be an option. If there was then a _one-time/permanent_ distinction, you wouldn't need a real mouse anymore. I will mainly work with **Direct** because it is the only way to make simple finger gestures.
